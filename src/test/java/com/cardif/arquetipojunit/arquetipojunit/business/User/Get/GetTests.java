@@ -7,17 +7,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @SpringBootTest
+@Transactional // For entity manager
 public class GetTests {
 
 
     @Autowired
     private UserBusiness userBusiness;
 
+    @PersistenceContext
+    private EntityManager em;
+
     @Test
     void ObtenerListaCompletaUsuariosCorrectamente() {
+        TestData.Users.forEach( u ->{
+            em.merge(u);
+        });
+
         List<AppUserDto> users = userBusiness.Get();
 
         Assert.notEmpty(users);

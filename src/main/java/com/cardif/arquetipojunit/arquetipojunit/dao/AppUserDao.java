@@ -25,9 +25,6 @@ import java.util.function.Function;
 public class AppUserDao implements AppUserRepository {
     @PersistenceContext
     private EntityManager em;
-    /*public AppUserDao(EntityManager em) {
-        this.em = em;
-    }*/
 
     @Override
     public List<AppUsers> findAll() {
