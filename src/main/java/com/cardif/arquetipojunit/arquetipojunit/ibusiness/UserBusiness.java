@@ -1,10 +1,9 @@
 package com.cardif.arquetipojunit.arquetipojunit.ibusiness;
 
-import com.cardif.arquetipojunit.arquetipojunit.dtos.UserDto;
+import com.cardif.arquetipojunit.arquetipojunit.dtos.AppUserDto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface UserBusiness {
-    List<UserDto> Get();
+    List<AppUserDto> Get();
 }

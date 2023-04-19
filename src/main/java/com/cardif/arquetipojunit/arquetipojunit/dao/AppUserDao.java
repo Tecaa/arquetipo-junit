@@ -1,6 +1,6 @@
 package com.cardif.arquetipojunit.arquetipojunit.dao;
 
-import com.cardif.arquetipojunit.arquetipojunit.dtos.UserDto;
+import com.cardif.arquetipojunit.arquetipojunit.dtos.AppUserDto;
 import com.cardif.arquetipojunit.arquetipojunit.entities.AppUsers;
 import com.cardif.arquetipojunit.arquetipojunit.repositories.AppUserRepository;
 import org.springframework.data.domain.Example;
@@ -8,11 +8,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +23,6 @@ import java.util.function.Function;
 
 @Service
 public class AppUserDao implements AppUserRepository {
-    public List<UserDto> Users = Arrays.asList(new UserDto("Aaaa", 12));
     @PersistenceContext
     private EntityManager em;
     /*public AppUserDao(EntityManager em) {
@@ -29,7 +31,14 @@ public class AppUserDao implements AppUserRepository {
 
     @Override
     public List<AppUsers> findAll() {
-        return null;
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<AppUsers> cq = cb.createQuery(AppUsers.class);
+        Root<AppUsers> rootEntry = cq.from(AppUsers.class);
+        CriteriaQuery<AppUsers> all = cq.select(rootEntry);
+
+        TypedQuery<AppUsers> allQuery = em.createQuery(all);
+        return allQuery.getResultList();
     }
 
     @Override

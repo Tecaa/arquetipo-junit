@@ -1,10 +1,10 @@
 package com.cardif.arquetipojunit.arquetipojunit.dtos;
 
-public class UserDto {
+public class AppUserDto {
     public String Name;
-    public int Age;
+    public long Age;
 
-    public UserDto(String name, int age) {
+    public AppUserDto(String name, long age) {
         Name = name;
         Age = age;
     }

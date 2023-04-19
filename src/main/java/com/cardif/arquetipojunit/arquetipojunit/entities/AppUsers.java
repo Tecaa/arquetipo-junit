@@ -14,10 +14,14 @@ public class AppUsers {
     private String Name;
     private long Age;
 
+
     public AppUsers(long id, String name, long age) {
         this.id = id;
         Name = name;
         Age = age;
+    }
+
+    public AppUsers() {
     }
 
     public long getId() {
