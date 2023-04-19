@@ -23,9 +23,9 @@ public class AppUserDao implements AppUserRepository {
     public List<UserDto> Users = Arrays.asList(new UserDto("Aaaa", 12));
     @PersistenceContext
     private EntityManager em;
-    public AppUserDao(EntityManager em) {
+    /*public AppUserDao(EntityManager em) {
         this.em = em;
-    }
+    }*/
 
     @Override
     public List<AppUsers> findAll() {
