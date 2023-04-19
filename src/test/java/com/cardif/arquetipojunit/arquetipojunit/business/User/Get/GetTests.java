@@ -13,7 +13,6 @@ import org.springframework.util.Assert;
 import java.util.List;
 
 @SpringBootTest
-//@ContextConfiguration(locations = "classpath*:/spring/applicationContext*.xml")
 public class GetTests {
 
 
