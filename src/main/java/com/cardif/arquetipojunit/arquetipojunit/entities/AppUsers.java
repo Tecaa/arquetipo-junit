@@ -1,11 +1,8 @@
 package com.cardif.arquetipojunit.arquetipojunit.entities;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class AppUsers {
@@ -14,12 +11,12 @@ public class AppUsers {
     @GeneratedValue
     private long id;
 
-    private String Nombre;
+    private String Name;
     private long Age;
 
-    public AppUsers(long id, String nombre, long age) {
+    public AppUsers(long id, String name, long age) {
         this.id = id;
-        Nombre = nombre;
+        Name = name;
         Age = age;
     }
 
@@ -31,12 +28,12 @@ public class AppUsers {
         this.id = id;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public String getName() {
+        return Name;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setName(String name) {
+        Name = name;
     }
 
     public long getAge() {
