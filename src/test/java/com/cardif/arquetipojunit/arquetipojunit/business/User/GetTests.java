@@ -1,5 +1,6 @@
-package com.cardif.arquetipojunit.arquetipojunit.business.User.Get;
+package com.cardif.arquetipojunit.arquetipojunit.business.User;
 
+import com.cardif.arquetipojunit.arquetipojunit.business.User.GetData;
 import com.cardif.arquetipojunit.arquetipojunit.dtos.AppUserDto;
 import com.cardif.arquetipojunit.arquetipojunit.ibusiness.UserBusiness;
 import org.junit.jupiter.api.Test;
@@ -25,11 +26,11 @@ public class GetTests {
 
     @Test
     void ObtenerListaCompletaUsuariosCorrectamente() {
-        TestData.Users.forEach( u ->{
+        GetData.Users.forEach(u ->{
             em.merge(u);
         });
 
-        List<AppUserDto> users = userBusiness.Get();
+        List<AppUserDto> users = userBusiness.get();
 
         Assert.notEmpty(users);
     }

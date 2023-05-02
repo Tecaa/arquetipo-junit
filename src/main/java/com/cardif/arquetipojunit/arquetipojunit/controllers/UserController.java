@@ -2,6 +2,7 @@ package com.cardif.arquetipojunit.arquetipojunit.controllers;
 
 import com.cardif.arquetipojunit.arquetipojunit.business.UserBusinessImpls;
 import com.cardif.arquetipojunit.arquetipojunit.dtos.AppUserDto;
+import com.cardif.arquetipojunit.arquetipojunit.ibusiness.UserBusiness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,18 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class HelloWorldController {
+public class UserController {
 
     @Autowired
-    private UserBusinessImpls userBusiness;
+    private UserBusiness userBusiness;
 
-    //@Autowired
-    //AppUserRepository appUserRep;
+    @RequestMapping("/")
+    public List<AppUserDto> get(){
+        return userBusiness.get();
+    }
 
-    @RequestMapping("/aa")
-    public String helloWorld(){
-        List<AppUserDto> dtos = userBusiness.Get();
-        return dtos.get(0).Name + " " + dtos.get(0).Age;
-
+    @RequestMapping("/arraigo")
+    public List<String> getArraigo(){
+        return userBusiness.getArraigo();
     }
 }

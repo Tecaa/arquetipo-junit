@@ -13,12 +13,14 @@ public class AppUsers {
 
     private String Name;
     private long Age;
+    private String Rut;
 
 
-    public AppUsers(long id, String name, long age) {
+    public AppUsers(long id, String name, long age, String rut) {
         this.id = id;
         Name = name;
         Age = age;
+        Rut = rut;
     }
 
     public AppUsers() {
@@ -46,6 +48,14 @@ public class AppUsers {
 
     public void setAge(long age) {
         Age = age;
+    }
+
+    public String getRut() {
+        return Rut;
+    }
+
+    public void setRut(String rut) {
+        Rut = rut;
     }
 
     // standard constructor, getters, setters
