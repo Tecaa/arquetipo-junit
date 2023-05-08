@@ -15,7 +15,9 @@ import java.util.Optional;
 import java.util.function.Function;
 
 
-
+/**
+ * Interfaz tipo JpaRepository para la entidad AppUsers
+ */
 public interface AppUserRepository extends JpaRepository<AppUsers, Long> {
 
 }

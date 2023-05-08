@@ -4,8 +4,11 @@ public class AppUserDto {
     public String Name;
     public long Age;
 
-    public AppUserDto(String name, long age) {
+    public long Id;
+
+    public AppUserDto(String name, long age, long id) {
         Name = name;
         Age = age;
+        Id = id;
     }
 }

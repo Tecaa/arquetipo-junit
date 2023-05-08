@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "0daf4900-511f-4632-a048-7794fbd1c9ec",
+		"name": "Java JUnit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10934698",
+		"_collection_link": "https://blue-station-858768.postman.co/workspace/My-Workspace~727288c2-f467-4cd6-8c5c-fe5b385bc199/collection/10934698-0daf4900-511f-4632-a048-7794fbd1c9ec?action=share&creator=10934698&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8089/user/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8089",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArraigo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8089/user/arraigo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8089",
+					"path": [
+						"user",
+						"arraigo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

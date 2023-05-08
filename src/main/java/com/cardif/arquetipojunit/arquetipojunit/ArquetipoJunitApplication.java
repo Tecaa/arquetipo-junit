@@ -15,11 +15,8 @@ public class ArquetipoJunitApplication {
 
 
 	public static void main(String[] args) {
-
-		log.debug("Hello this is a debug message");
-		log.info("Hello this is an info message");
+		log.debug("Iniciando main");
 		SpringApplication.run(ArquetipoJunitApplication.class, args);
-
 	}
 
 }

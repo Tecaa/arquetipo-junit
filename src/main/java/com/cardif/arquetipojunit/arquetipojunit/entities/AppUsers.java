@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+/**
+ * Representación de la tabla AppUsers en la base de datos.
+ */
 public class AppUsers {
 
     @Id
@@ -57,6 +60,4 @@ public class AppUsers {
     public void setRut(String rut) {
         Rut = rut;
     }
-
-    // standard constructor, getters, setters
 }

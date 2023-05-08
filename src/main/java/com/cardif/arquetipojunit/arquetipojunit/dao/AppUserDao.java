@@ -27,6 +27,9 @@ public class AppUserDao implements AppUserRepository {
     private EntityManager em;
 
     @Override
+    /**
+     * Se entrega la lista completa de usuarios de la BD.
+     */
     public List<AppUsers> findAll() {
 
         CriteriaBuilder cb = em.getCriteriaBuilder();

@@ -1,6 +1,5 @@
 package com.cardif.arquetipojunit.arquetipojunit.business.User;
 
-import com.cardif.arquetipojunit.arquetipojunit.business.User.GetData;
 import com.cardif.arquetipojunit.arquetipojunit.dtos.AppUserDto;
 import com.cardif.arquetipojunit.arquetipojunit.ibusiness.UserBusiness;
 import org.junit.jupiter.api.Test;
@@ -15,6 +14,10 @@ import java.util.List;
 
 @SpringBootTest
 @Transactional // For entity manager
+/**
+ * Clase UserBusiness
+ * Método Get
+ */
 public class GetTests {
 
 
@@ -25,13 +28,23 @@ public class GetTests {
     private EntityManager em;
 
     @Test
-    void ObtenerListaCompletaUsuariosCorrectamente() {
+    /**
+     * Testeamos el método para obtener el listado de usuarios.
+     */
+    void ObtenerUsuariosCorrectamente() {
+        // Arrange
         GetData.Users.forEach(u ->{
             em.merge(u);
         });
 
+        // Act
         List<AppUserDto> users = userBusiness.get();
 
+        // Assert
         Assert.notEmpty(users);
+        Assert.isTrue (users.size() == GetData.Users.size());
+        for (AppUserDto user: users) {
+            Assert.isTrue(GetData.Users.stream().anyMatch(u -> u.getId() == user.Id));
+        }
     }
 }
